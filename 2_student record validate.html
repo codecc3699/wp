@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>Student Registration Form</title>
+<style>
+body{
+background-image: linear-gradient(to right, yellow , red);
+}
+ul {list-style-type:none;}
+#heading{
+text-decoration:underline;
+font-style: italic;
+color:black;
+text-align:center;
+}
+#para{
+font-size:20px;
+font-style: italic;
+color:blue;
+text-align:center;
+}
+</style>
+</head>
+<body>
+<script>
+function validate()
+{
+var f=document.getElementById("fname");
+var l=document.getElementById("lname");
+var u=document.getElementById("USN");
+var s=document.getElementById("sem");
+var e=document.getElementById("email");
+var p=document.getElementById("phone");
+var a=document.getElementById("address");
+var r1=document.getElementById("g1");
+var r2=document.getElementById("g2");
+var c1=document.getElementById("ch1");
+var c2=document.getElementById("ch1");
+var c3=document.getElementById("ch1");
+var c4=document.getElementById("ch1");
+var b=document.getElementById("branch");
+var i=document.getElementById("image");
+var usn=/^[1-4][a-zA-Z]{2}[0-9]{2}[a-zA-Z]{2}[0-9]{3}$/;
+var sem=/^[1-8]$/;
+var email=/[a-z][a-z0-9_]+@[a-z]+\.[a-z]+/;
+var phone = /[0-9]{10}/;
+if(f.value.length==0||l.value.length==0)
+{
+alert("please enter ur name");
+f.focus();
+return ;
+}
+if(u.value.length==0)
+{
+alert("USN field can not be empty");
+u.focus();
+return;
+}
+else
+{
+if(!u.value.match(usn))
+{
+alert("invalid USN");
+u.focus();
+return;
+}
+}
+if(s.value.length==0)
+{
+alert("Semester field can not be empty");
+s.focus();
+return;
+}
+else
+{
+if(!s.value.match(sem))
+{
+alert("invalid Semester");
+e.focus();
+return;
+}
+}
+if(e.value.length==0)
+{
+alert("Email ID field can not be empty");
+e.focus();
+return;
+}
+else
+{
+if(!e.value.match(email))
+{
+alert("invalid emailid");
+e.focus();
+return;
+}
+}
+if(p.value.length==0)
+{
+alert("phone no field can not be empty");
+p.focus();
+return;
+}
+else
+{
+if(!p.value.match(phone))
+{
+alert("invalid phone no");
+p.focus();
+return;
+}
+}
+if(a.value.length==0)
+{
+alert("please enter address");
+a.focus();
+return ;
+}
+if(r1.checked==false&&r2.checked==false)
+{
+alert("please select the gender");
+return;
+}
+if(c1.checked==false&&c2.checked==false&&c3.checked==false&&c4.checked==false)
+{
+alert("please select the Area of Interest");
+return;
+}
+if(b.selectedIndex == 0)
+{
+alert("Please choose your branch");
+return ;
+}
+if(i.value.length==0)
+{
+alert("please upload your photo");
+i.focus();
+return ;
+}
+alert("Student Registrtion Form submitted Successfully");
+}
+</script>
+<form style="font-size:20px;">
+<fieldset>
+<legend> Student Registrtion Form</legend>
+<h1 id="heading"> Student Registration Details</h1>
+<p id="para">(All Fields are Mandatory *)</p>
+<div cellpadding="2" width="20%" align="left"
+cellspacing="2">
+<ul>
+<li>
+First name:<input type="text" id="fname" size="30"><br><br>
+</li>
+<li>
+Last name:<input type="text" id="lname" size="30"><br><br>
+</li>
+<li>
+USN:<input type="text" id="USN" size="30" ><br><br>
+</li>
+<li>
+Semester:<input type="text" id="sem" size="30"><br><br>
+</li>
+<li>
+Email ID:<input type="email" id="email" size="30"><br><br>
+</li>
+<li>
+Phone no:<input type="tel" id="phone" size="30"><br><br>
+</li>
+<li>
+Enter Address:<br>
+<textarea rows="10" cols="50" id="address" size="30"></textarea><br><br>
+</li>
+<li>
+Select Gender:<br>
+<input type="radio" id="g1" size="30">Male
+<input type="radio" id="g2">Female<br><br><br>
+</li>
+<li>
+Select Your Area of Interest:<br>
+<input type="checkbox" id="ch1">BigData<br>
+<input type="checkbox" id="ch2">AI<br>
+<input type="checkbox" id="ch3">ML<br>
+<input type="checkbox" id="ch4">Robotics<br><br><br>
+</li>
+<li>
+Select Your Branch:<br>
+<select id="branch">
+<option>--Select a Branch--</option>
+<option>AE</option>
+<option>AS</option>
+<option>CS</option>
+<option>IS</option>
+</select>
+</li>
+<br><br>
+<li>
+Upload your image:
+<input type="file" id="image"><br><br><br>
+</li>
+<li>
+<input type="submit" id="submit" onclick="validate()" value="Submit the Information" 
+style="height:50px" >
+<input type="reset" id="reset" size="30" value="Reset the Information" style="height:50px"><br>
+</li>
+</ul>
+</div>
+</fieldset>
+</form>
+</body>
+</html>

@@ -1,0 +1,111 @@
+P.special {
+color : green;
+border: solid red;
+}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+ <HEAD>
+ <LINK href="special.css" rel="stylesheet" type="text/css">
+ </HEAD>
+ <BODY>
+ <P class="special">This paragraph should have special green text.
+ </BODY>
+</HTML>
+<HEAD>
+<STYLE type="text/css">
+ H1 {border-width: 1; border: solid; text-align: center}
+</STYLE>
+</HEAD>
+<HEAD>
+<STYLE type="text/css">
+ H1.myclass {border-width: 1; border: solid; text-align: center}
+</STYLE>
+</HEAD>
+<BODY>
+<H1 class="myclass"> This H1 is affected by our style </H1>
+<H1> This one is not affected by our style </H1>
+</BODY>
+<HEAD>
+<STYLE type="text/css">
+ #myid {border-width: 1; border: solid; text-align: center}
+</STYLE>
+</HEAD>
+<BODY>
+<H1 class="myclass"> This H1 is not affected </H1>
+<H1 id="myid"> This H1 is affected by style </H1>
+<H1> This H1 is not affected </H1>
+</BODY>
+
+<HEAD>
+<STYLE type="text/css">
+ SPAN.sc-ex { font-variant: small-caps }
+</STYLE>
+</HEAD>
+<BODY>
+ <P><SPAN class="sc-ex">The first</SPAN> few words of
+ this paragraph are in small-caps.
+</BODY>
+<HEAD>
+<STYLE type="text/css">
+ DIV.Abstract { text-align: justify }
+</STYLE>
+</HEAD>
+<BODY>
+<DIV class="Abstract">
+ <P>The Chieftain product range is our market winner for
+ the coming year. This report sets out how to position
+ Chieftain against competing products.
+ <P>Chieftain replaces the Commander range, which will
+ remain on the price list until further notice.
+</DIV>
+</BODY>
+<HEAD>
+<STYLE type="text/css" media="projection">
+ H1 { color: blue}
+</STYLE>
+<STYLE type="text/css" media="print">
+ H1 { text-align: center }
+</STYLE>
+<STYLE type="text/css" media="aural">
+ A { cue-before: uri(bell.aiff); cue-after: uri(dong.wav)}
+</STYLE>
+</HEAD>
+
+<!b. Embedded style sheets.>
+<style>
+ p {
+ font-family: georgia, serif; 
+ font-size: x-small;
+ }
+ hr {
+ color: #ff9900; 
+ height: 1px; 
+ }
+ a:hover {
+ color: #ff0000; 
+ text-decoration: none;
+ }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+p {
+ font-family: georgia, serif; 
+ font-size: x-large;
+ color:#ff9900;
+ }
+a:hover {
+ color: LimeGreen; 
+ text-decoration: none;
+ }
+</style>
+</head>
+<body>
+<p>This paragraph tag has been preset using embedded style sheets. Same for the horizontal 
+rule below and the hyperlink under that. </p>
+<p>Also see <a href="/css/external_style_sheets.cfm" target="_blank">external style 
+sheets</a></p>
+</body>
+</html>
